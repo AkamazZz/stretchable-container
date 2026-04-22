@@ -1,5 +1,10 @@
 import 'package:flutter/widgets.dart';
 
+import 'dot_grid_spec.dart';
+import 'stretch_layout.dart';
+import 'stretch_physics.dart';
+
+@Deprecated('Use StretchLayout / DotGridSpec / StretchPhysics instead.')
 @immutable
 class StretchableContainerConfig {
   const StretchableContainerConfig({
@@ -14,6 +19,7 @@ class StretchableContainerConfig {
     this.influenceRadius = 120,
     this.maxOffset = 20,
     this.maxScaleDelta = 0.15,
+    this.snapDuration = const Duration(milliseconds: 200),
     this.contentPadding = const EdgeInsets.all(16),
     this.footerHeight = 40,
   });
@@ -29,8 +35,38 @@ class StretchableContainerConfig {
   final double influenceRadius;
   final double maxOffset;
   final double maxScaleDelta;
+  final Duration snapDuration;
   final EdgeInsets contentPadding;
   final double footerHeight;
 
   double get gridHeight => height - footerHeight - contentPadding.vertical;
+
+  StretchLayout toLayout() {
+    return StretchLayout(
+      width: width,
+      height: height,
+      borderRadius: borderRadius,
+      contentPadding: contentPadding,
+      footerHeight: footerHeight,
+    );
+  }
+
+  DotGridSpec toGridSpec() {
+    return DotGridSpec(
+      rows: gridRows,
+      columns: gridColumns,
+      padding: gridPadding,
+      baseDotSize: baseDotSize,
+      maxDotGrowth: maxDotGrowth,
+      influenceRadius: influenceRadius,
+    );
+  }
+
+  StretchPhysics toPhysics() {
+    return StretchPhysics(
+      maxOffset: maxOffset,
+      maxScaleDelta: maxScaleDelta,
+      snapDuration: snapDuration,
+    );
+  }
 }

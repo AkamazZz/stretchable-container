@@ -1,9 +1,23 @@
 name: stretchable_container
 description: A Flutter package for a draggable stretchable frosted container.
 version: 1.0.0
+repository: https://github.com/<owner>/stretchable_container
+issue_tracker: https://github.com/<owner>/stretchable_container/issues
+topics:
+  - widget
+  - animation
+  - container
+  - interactive
+platforms:
+  android:
+  ios:
+  macos:
+  linux:
+  windows:
+  web:
 
 environment:
-  sdk: ^3.10.0
+  sdk: ">=3.10.0 <4.0.0"
 
 dependencies:
   flutter:

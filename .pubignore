@@ -1,0 +1,7 @@
+specs/
+.playwright-mcp/
+.fvm/
+.vscode/
+.idea/
+build/
+*.iml
