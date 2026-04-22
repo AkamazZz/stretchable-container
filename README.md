@@ -8,7 +8,7 @@ Flutter package for a frosted draggable container with a reactive dot grid.
 
 `lib/src/widgets/stretchable_container.dart` contains the main widget and interaction state.
 
-`lib/src/models/stretchable_container_config.dart` contains configurable sizing and behavior values.
+`lib/src/models/` contains layout, grid, physics, and style configuration values.
 
 `lib/src/widgets/stretchable_dot_grid.dart` contains the internal grid rendering.
 
@@ -31,3 +31,5 @@ class ExamplePage extends StatelessWidget {
   }
 }
 ```
+
+The runnable sample app lives under `example/`. Run it with `cd example && flutter run`.
